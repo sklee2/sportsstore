@@ -14,10 +14,19 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'spring-boot'
 
-jar {
+
+apply plugin: 'war'
+
+war {
 	baseName = 'sportsstore'
 	version = '0.0.1-SNAPSHOT'
 }
+
+
+//jar {
+//	baseName = 'sportsstore'
+//	version = '0.0.1-SNAPSHOT'
+//}
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
@@ -30,6 +39,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-jdbc')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile fileTree(dir: 'libs', include: '*.jar')
+	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('junit:junit')
 }
