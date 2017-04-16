@@ -27,7 +27,7 @@ public class ProductController {
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "{id}")
-	public Products get(@PathVariable String id) {
+	public Products get(@PathVariable int id) {
 		return productsDao.findOne(id);
 	}
 
@@ -38,13 +38,13 @@ public class ProductController {
 	}
 
 	@RequestMapping(method = RequestMethod.DELETE, value = "{id}")
-	public void delete(@PathVariable String id) {
+	public void delete(@PathVariable int id) {
 		productsDao.delete(id);
 
 	}
 
 	@RequestMapping(method = RequestMethod.PUT, value = "{id}")
-	public Products update(@PathVariable String id, @RequestBody Products product) {
+	public Products update(@PathVariable int id, @RequestBody Products product) {
 		return productsDao.update(id, product);
 
 	}

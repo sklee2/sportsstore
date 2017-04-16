@@ -28,7 +28,7 @@ public class SportsstoreApplicationTests {
 		
 
 //		productsDao.save(product);
-		productsDao.update("10",product);
+		productsDao.update(10,product);
 		
 		
 	}

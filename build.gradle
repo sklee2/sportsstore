@@ -15,18 +15,18 @@ apply plugin: 'eclipse'
 apply plugin: 'spring-boot'
 
 
-apply plugin: 'war'
+apply plugin: 'jar'
 
-war {
-	baseName = 'sportsstore'
-	version = '0.0.1-SNAPSHOT'
-}
-
-
-//jar {
+//war {
 //	baseName = 'sportsstore'
 //	version = '0.0.1-SNAPSHOT'
 //}
+
+
+jar {
+	baseName = 'sportsstore'
+	version = '0.0.1-SNAPSHOT'
+}
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 

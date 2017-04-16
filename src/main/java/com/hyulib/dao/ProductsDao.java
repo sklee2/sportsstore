@@ -22,7 +22,7 @@ public class ProductsDao {
 		return products;
 	}
 
-	public Products findOne(String id) {
+	public Products findOne(int id) {
 		String sql = "SELECT * FROM PRODUCTS WHERE ID= ?";
 		Products product = (Products) jdbcTemplate.queryForObject(sql, new Object[] { id }, new ProductsRowMapper());
 		return product;
@@ -35,12 +35,12 @@ public class ProductsDao {
 		return product;
 	}
 
-	public void delete(String id) {
+	public void delete(int id) {
 		String sql = "DELETE FROM PRODUCTS WHERE ID=?";
 		jdbcTemplate.update(sql, id);
 	}
 
-	public Products update(String id, Products product) {
+	public Products update(int id, Products product) {
 		String sql = "UPDATE PRODUCTS SET CATEGORY=?,DESCRIPTION=?,NAME=?,PRICE=? WHERE ID=?";
 		jdbcTemplate.update(sql, new Object[] { product.getCategory(), product.getDescription(), product.getName(),
 				product.getPrice(), id });
